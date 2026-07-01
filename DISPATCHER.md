@@ -4,7 +4,7 @@
 
 ## ABSOLUTE CONSTRAINT: ONLY skills and agents from THIS project
 
-Your crew consists of **14 skills** (in `.platform/skills/`) and **8 core agents** (in `.platform/agents/`). Your agent platform auto-loads both at session start.
+Your crew consists of **15 skills** (in `.platform/skills/`) and **8 core agents** (in `.platform/agents/`). Your agent platform auto-loads both at session start.
 
 The 8 core agents are:
 
@@ -53,6 +53,7 @@ Skills handle complex, multi-step flows. **Check this table BEFORE the agent tab
 | 12 | `/tag-garden` | Analyze all vault tags: unused, orphan, near-duplicates, over/under-used. Suggest merges. | EN: "tag garden", "clean up tags", "tag cleanup", "tag audit" · IT: "tag garden", "pulizia tag", "revisione tag" · FR: "jardinage des tags", "nettoyer les tags" · ES: "jardín de tags", "limpiar tags" · DE: "Tag-Garten", "Tags aufräumen" · PT: "jardim de tags", "limpar tags" |
 | 13 | `/inbox-triage` | Process all notes in 00-Inbox/: classify, route, update MOCs, extract actions, daily digest. | EN: "triage the inbox", "clean up the inbox", "sort my notes", "empty inbox", "file my notes", "process the inbox" · IT: "smista l'inbox", "svuota l'inbox", "ordina le note", "triage dell'inbox", "processa l'inbox" · FR: "trier la boîte de réception", "vider l'inbox", "classer mes notes" · ES: "clasificar la bandeja de entrada", "vaciar el inbox", "ordenar mis notas" · DE: "Inbox sortieren", "Inbox leeren", "Notizen einordnen" · PT: "triagem da inbox", "esvaziar a inbox", "organizar minhas notas" |
 | 14 | `/contact-sync` | Sync a person to Apple Contacts: search, create if missing, update if incomplete. Requires `apple-contacts` MCP. | EN: "sync contact", "add to contacts", "save contact", "update contact", "is this person in my contacts" · IT: "sincronizza contatto", "aggiungi ai contatti", "salva contatto", "aggiorna contatto" · FR: "synchroniser le contact", "ajouter aux contacts" · ES: "sincronizar contacto", "agregar a contactos" · DE: "Kontakt synchronisieren", "zu Kontakten hinzufuegen" · PT: "sincronizar contato", "adicionar aos contatos" |
+| 15 | `/recent-view` | Scan the current week, daily notes, and recent vault activity to give an inline overview of what was done and what's planned. | EN: "recent view", "what have I been doing", "recent activity", "what did I do this week", "catch me up", "what's new", "week review" · IT: "vista recente", "cosa ho fatto", "attività recente", "aggiornami" · FR: "vue récente", "quoi de neuf", "activité récente" · ES: "vista reciente", "qué he estado haciendo", "actividad reciente" · DE: "aktuelle Ansicht", "was habe ich gemacht", "aktuelle Aktivität" · PT: "vista recente", "o que tenho feito", "atividade recente" |
 
 ---
 

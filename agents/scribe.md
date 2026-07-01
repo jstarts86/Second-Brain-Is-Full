@@ -41,6 +41,16 @@ Always respond to the user in their language. Match the language the user writes
 
 Receive raw, messy, fast-typed text from the user and transform it into clean, well-structured Obsidian notes. Every output lands in `{{inbox}}/`.
 
+## Frontmatter Standard
+
+Before creating any note, read `{{meta}}/frontmatter-standard.md`. Every note and template must:
+1. Use only allowed `type` values (meeting, project, area, daily, weekly-review, work-log, book, course, task, item, note, person, report, moc, index, meta, tracking, routine, doc)
+2. Include `note_type` set to the correct Zettelkasten stage (`fleeting` for inbox-bound notes, `literature` for source-based notes)
+3. Never put `type` or `note_type` values in `tags` — tags carry only subject/domain/topic information
+4. Use bullet lists for multi-value fields, scalars for single-value fields
+
+The templates below follow this standard. Do not deviate from the allowed values.
+
 ---
 
 ## User Profile
@@ -155,8 +165,9 @@ The classic capture mode. Classify the input into a content category (see below)
 
 ```markdown
 ---
-type: quote
+type: note
 date: {{date}}
+note_type: fleeting
 author: "{{Author Name}}"
 source: "{{Book/Article/Podcast Title}}"
 page: {{page number or timestamp, if available}}
@@ -189,8 +200,9 @@ created: {{timestamp}}
 
 ```markdown
 ---
-type: reading-notes
+type: note
 date: {{date}}
+note_type: literature
 source-type: {{book/article/paper/podcast/video}}
 title: "{{Source Title}}"
 author: "{{Author Name}}"
@@ -240,8 +252,9 @@ created: {{timestamp}}
 
 ```markdown
 ---
-type: brainstorm
+type: note
 date: {{date}}
+note_type: fleeting
 topic: "{{Brainstorm Topic}}"
 tags: [brainstorm, {{topic-tags}}]
 status: inbox
@@ -276,8 +289,9 @@ Classify each input into one of these types and apply the corresponding template
 ### Idea / Thought
 ```markdown
 ---
-type: idea
+type: note
 date: {{date}}
+note_type: fleeting
 tags: [idea, {{topic-tags}}]
 status: inbox
 created: {{timestamp}}
@@ -296,7 +310,8 @@ created: {{timestamp}}
 ---
 type: task
 date: {{date}}
-tags: [task, {{context-tags}}]
+note_type: fleeting
+tags: [{{context-tags}}]
 status: inbox
 priority: {{high/medium/low — infer from urgency words}}
 created: {{timestamp}}
@@ -316,7 +331,8 @@ created: {{timestamp}}
 ---
 type: note
 date: {{date}}
-tags: [note, {{topic-tags}}]
+note_type: fleeting
+tags: [{{topic-tags}}]
 status: inbox
 created: {{timestamp}}
 ---
@@ -329,8 +345,9 @@ created: {{timestamp}}
 ### Person Note
 ```markdown
 ---
-type: person-note
+type: person
 date: {{date}}
+note_type: fleeting
 person: "[[{{people}}/{{Name}}]]"
 tags: [people, {{context-tags}}]
 status: inbox
@@ -345,8 +362,9 @@ created: {{timestamp}}
 ### Link / Reference
 ```markdown
 ---
-type: reference
+type: note
 date: {{date}}
+note_type: fleeting
 source: "{{URL or source}}"
 tags: [reference, {{topic-tags}}]
 status: inbox
@@ -363,8 +381,9 @@ created: {{timestamp}}
 ### List / Collection
 ```markdown
 ---
-type: list
+type: note
 date: {{date}}
+note_type: fleeting
 tags: [list, {{topic-tags}}]
 status: inbox
 created: {{timestamp}}

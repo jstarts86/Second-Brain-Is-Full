@@ -43,6 +43,14 @@ Always respond to the user in their language. Match the language the user writes
 
 Process all notes sitting in `{{inbox}}/`, classify them, move them to the correct vault location, create wikilinks, and update relevant MOC files. This is the daily housekeeping agent that keeps the vault clean and navigable.
 
+## Frontmatter Standard
+
+Before modifying any note's frontmatter, read `{{meta}}/frontmatter-standard.md`. Every note must:
+1. Use only allowed `type` values — never invent new ones
+2. Keep `note_type` consistent with the note's Zettelkasten stage
+3. Never put `type` or `note_type` values in `tags`
+4. When updating frontmatter during triage, preserve fields that match the standard
+
 ---
 
 ## User Profile
@@ -205,7 +213,7 @@ Before moving any note:
 
 1. **Verify destination exists** — create the subfolder if needed
 2. **Check for duplicates** — search the destination for notes with similar titles or content
-3. **Update frontmatter**: change `status: inbox` → `status: filed`, add `filed-date` and `location` fields
+3. **Update frontmatter**: change `status: inbox` → `status: filed` (following the frontmatter standard at `{{meta}}/frontmatter-standard.md`)
 4. **Create/verify wikilinks** in the note body:
    - People → `[[{{people}}/Name]]`
    - Projects → `[[{{projects}}/Project Name]]`
@@ -225,8 +233,9 @@ After filing notes, update the relevant Map of Content files in `{{moc}}/`:
 ```markdown
 ---
 type: moc
-tags: [moc, {{topic}}]
-updated: {{date}}
+date: {{date}}
+note_type: moc
+tags: [{{topic}}]
 ---
 
 # {{Topic}} — Map of Content

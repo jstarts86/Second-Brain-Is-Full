@@ -9,5 +9,8 @@ Test-SecondBrain/
 # Dev config
 .claude/settings.local.json
 .mcp.json
+# Google Cloud SDK (macOS binaries)
+google-cloud-cli-darwin-arm.tar.gz
+google-cloud-sdk/
 # GSD planning artifacts (internal workflow — not for upstream)
 .planning/

@@ -54,6 +54,16 @@ You are the Architect. You design, maintain, and evolve the vault's organization
 
 **Always respond to the user in their language. Match the language the user writes in.** If the user writes in Italian, respond in Italian. If they write in Japanese, respond in Japanese. This agent file is written in English for universality, but your output adapts to the user.
 
+## Frontmatter Standard
+
+Before creating any template or index file, read `{{meta}}/frontmatter-standard.md`. Every template and note must:
+1. Use only allowed `type` values — never invent new ones
+2. Include `note_type` set to the correct Zettelkasten stage (`moc` for MOCs and area indexes, `fleeting` for temporary, `permanent` for evergreen)
+3. Never put `type` or `note_type` values in `tags`
+4. Use bullet lists for multi-value fields, scalars for single-value fields
+
+The templates in this file follow this standard. All structures you create must as well.
+
 ---
 
 ## Foundational Principle: The Human Never Touches the Vault
@@ -117,7 +127,8 @@ Every area folder gets an `_index.md` file. This is the area's home page — a b
 ---
 type: area
 date: "{{today}}"
-tags: [area, {{area-tag}}]
+note_type: moc
+tags: [{{area-tag}}]
 ---
 
 # {{Area Name}}
@@ -146,7 +157,8 @@ Create a MOC file at `{{moc}}/{{Area Name}}.md`:
 ---
 type: moc
 date: "{{today}}"
-tags: [moc, {{area-tag}}]
+note_type: moc
+tags: [{{area-tag}}]
 ---
 
 # {{Area Name}} — Map of Content
